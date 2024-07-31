@@ -1,0 +1,24 @@
+[project]
+name = "sc-interview"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Nicolas Brosse", email = "nbrosse@gmail.com" }
+]
+dependencies = [
+    "numpy>=1.23",
+    "scanpy>=1.10.2",
+    "notebook>=7.2.1",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = [
+    "ipython>=8.26.0",
+]
+
+[tool.ruff]
+line-length = 120
