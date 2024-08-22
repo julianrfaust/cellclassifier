@@ -16,7 +16,11 @@ The script file `interview.py` shows you how to read the data contained in `cell
 
 ## Task
 
-The task in this exercise is to train a classifier to categorize cells by their cell type using single-cell RNA-seq data. You may choose any model and metric to evaluate your results. You may also downsample the dataset if you do not have enough computing power to train your model. We're not looking for the highest possible performances but we expect in-depth understanding of all the choices you've made to tackle this classification task. In addition, code quality and clarity will be carefully examined. 
+The task in this exercise is to train a classifier to categorize cells by their cell type using single-cell RNA-seq data. You may choose any model and metric to evaluate your results. You may also downsample the dataset if you do not have enough computing power to train your model. 
+
+## Interview Process
+
+For the interview we will ask you to present your work succintly. We're not looking for the highest possible performances but we expect clean code and in-depth understanding of all the choices you've made to tackle this classification task. We will ask questions about what you have done **but also broad machine learning questions that may be out of the scope of the homework.**
 
 ## References
 
