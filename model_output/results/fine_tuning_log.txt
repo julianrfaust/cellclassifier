@@ -1,0 +1,86 @@
+Loading data...
+Data loaded successfully.
+UMI Counts Type: <class 'scipy.sparse._csc.csc_matrix'>
+Cell Classes Type: <class 'numpy.ndarray'>
+Gene IDs Type: <class 'numpy.ndarray'>
+UMI Counts Shape: (65943, 16769)
+Number of Gene IDs: 16769
+Number of Cell Classes: 65943
+Verifying Ensembl Gene IDs...
+550 input query terms found no hit:     ['ENSG00000235373', 'ENSG00000279244', 'ENSG00000269554', 'ENSG00000203301', 'ENSG00000271895', 'ENS
+Total input gene Ensembl IDs: 16769
+Number of query results: 16769
+Number of genes with missing symbols: 1104
+Removing genes with missing symbols...
+Number of genes after removal: 15665
+Creating AnnData object...
+AnnData object created successfully with shape: (65943, 15665)
+Number of unique cell types: 11
+Sample cell type labels: ['CD14+ Monocyte' 'CD19+ B' 'CD34+' 'CD4+ T Helper2' 'CD4+/CD25 T Reg'
+ 'CD4+/CD45RA+/CD25- Naive T' 'CD4+/CD45RO+ Memory' 'CD56+ NK'
+ 'CD8+ Cytotoxic T' 'CD8+/CD45RA+ Naive Cytotoxic']
+Number of unique cell types after mapping: 11
+Unique cell types: ['CD14+ Monocyte' 'CD19+ B' 'CD34+' 'CD4+ T Helper2' 'CD4+/CD25 T Reg'
+ 'CD4+/CD45RA+/CD25- Naive T' 'CD4+/CD45RO+ Memory' 'CD56+ NK'
+ 'CD8+ Cytotoxic T' 'CD8+/CD45RA+ Naive Cytotoxic' 'Dendritic']
+AnnData object saved to 'data/my_data.h5ad'.
+Tokenizing the data...
+Tokenizer Model Input Size: 2048
+Tokenizer Special Token: False
+Tokenizing data/my_data.h5ad
+Creating dataset.
+Data tokenization complete.
+
+
+Fine-tuning the Geneformer model...
+Classifier Training Args: {'num_train_epochs': 3, 'learning_rate': 5e-05, 'per_device_train_batch_size': 8, 'seed': 42}
+Classifier Freeze Layers: 3
+Data preparation for fine-tuning complete.
+mkdir: cannot create directory ‘fine_tuning_output/241013_geneformer_cellClassifier_my_fine_tuning/’: File exists
+  0%|                                                                                                                                                                                       | 0/1 [00:00<?, ?it/s]****** Validation split: 1/1 ******
+
+mkdir: cannot create directory ‘fine_tuning_output/241013_geneformer_cellClassifier_my_fine_tuning/ksplit1’: File exists
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at Geneformer/gf-6L-30M-i2048 and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Pad token ID: 0
+Mask token ID: 1
+{'loss': 1.4508, 'grad_norm': 5.081381320953369, 'learning_rate': 4.889480290070658e-05, 'epoch': 0.1}
+{'loss': 0.9096, 'grad_norm': 11.47851276397705, 'learning_rate': 4.720853477129045e-05, 'epoch': 0.2}
+{'loss': 0.8193, 'grad_norm': 5.960808753967285, 'learning_rate': 4.5522266641874307e-05, 'epoch': 0.3}
+{'loss': 0.7715, 'grad_norm': 8.727774620056152, 'learning_rate': 4.3835998512458165e-05, 'epoch': 0.4}
+{'loss': 0.7624, 'grad_norm': 8.677613258361816, 'learning_rate': 4.2149730383042023e-05, 'epoch': 0.5}
+{'loss': 0.7403, 'grad_norm': 13.989985466003418, 'learning_rate': 4.046346225362588e-05, 'epoch': 0.6}
+{'loss': 0.7045, 'grad_norm': 11.776568412780762, 'learning_rate': 3.877719412420974e-05, 'epoch': 0.7}
+{'loss': 0.6921, 'grad_norm': 7.473670959472656, 'learning_rate': 3.7090925994793606e-05, 'epoch': 0.8}
+{'loss': 0.6642, 'grad_norm': 11.402912139892578, 'learning_rate': 3.5404657865377464e-05, 'epoch': 0.9}
+{'eval_loss': 0.6185460090637207, 'eval_accuracy': 0.7726082161566032, 'eval_macro_f1': 0.6342469536863553, 'eval_runtime': 145.5246, 'eval_samples_per_second': 99.695, 'eval_steps_per_second': 8.308, 'epoch': 1.0}
+  0%|                                                                                                                                                                                     | 0/1 [1:11:31<?, ?it/s/home/julia/miniconda3/envs/envi/lib/python3.11/site-packages/geneformer/collator_for_classification.py:658: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).                                                                                                                     
+  batch = {k: torch.tensor(v, dtype=torch.int64) for k, v in batch.items()}
+{'loss': 0.6417, 'grad_norm': 7.775920391082764, 'learning_rate': 3.371838973596132e-05, 'epoch': 1.0}
+{'loss': 0.6039, 'grad_norm': 11.313465118408203, 'learning_rate': 3.203212160654519e-05, 'epoch': 1.1}
+{'loss': 0.601, 'grad_norm': 16.613183975219727, 'learning_rate': 3.0345853477129043e-05, 'epoch': 1.2}
+{'loss': 0.6014, 'grad_norm': 8.857337951660156, 'learning_rate': 2.8659585347712908e-05, 'epoch': 1.3}
+{'loss': 0.5905, 'grad_norm': 8.432562828063965, 'learning_rate': 2.6973317218296767e-05, 'epoch': 1.4}
+{'loss': 0.582, 'grad_norm': 18.480226516723633, 'learning_rate': 2.5287049088880625e-05, 'epoch': 1.5}
+{'loss': 0.5902, 'grad_norm': 20.89250946044922, 'learning_rate': 2.3600780959464487e-05, 'epoch': 1.6}
+{'loss': 0.5724, 'grad_norm': 16.949369430541992, 'learning_rate': 2.1914512830048345e-05, 'epoch': 1.7}
+{'loss': 0.5707, 'grad_norm': 11.404426574707031, 'learning_rate': 2.0228244700632207e-05, 'epoch': 1.8}
+{'loss': 0.5678, 'grad_norm': 10.679384231567383, 'learning_rate': 1.8541976571216066e-05, 'epoch': 1.9}
+{'eval_loss': 0.5540184378623962, 'eval_accuracy': 0.7992831541218638, 'eval_macro_f1': 0.6596897317342143, 'eval_runtime': 192.358, 'eval_samples_per_second': 75.422, 'eval_steps_per_second': 6.285, 'epoch': 2.0}
+  0%|                                                                                                                                                                                     | 0/1 [2:23:31<?, ?it/s/home/julia/miniconda3/envs/envi/lib/python3.11/site-packages/geneformer/collator_for_classification.py:658: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).                                                                                                                     
+  batch = {k: torch.tensor(v, dtype=torch.int64) for k, v in batch.items()}
+{'loss': 0.5637, 'grad_norm': 13.459278106689453, 'learning_rate': 1.6855708441799928e-05, 'epoch': 2.0}
+{'loss': 0.5523, 'grad_norm': 15.234888076782227, 'learning_rate': 1.5169440312383788e-05, 'epoch': 2.1}
+{'loss': 0.5345, 'grad_norm': 22.68018913269043, 'learning_rate': 1.3483172182967646e-05, 'epoch': 2.2}
+{'loss': 0.5125, 'grad_norm': 20.63334846496582, 'learning_rate': 1.1796904053551506e-05, 'epoch': 2.3}
+{'loss': 0.531, 'grad_norm': 6.958903789520264, 'learning_rate': 1.0110635924135367e-05, 'epoch': 2.4}
+{'loss': 0.5247, 'grad_norm': 11.250325202941895, 'learning_rate': 8.424367794719227e-06, 'epoch': 2.5}
+{'loss': 0.5191, 'grad_norm': 10.035813331604004, 'learning_rate': 6.738099665303087e-06, 'epoch': 2.6}
+{'loss': 0.5161, 'grad_norm': 18.531158447265625, 'learning_rate': 5.051831535886947e-06, 'epoch': 2.7}
+{'loss': 0.5285, 'grad_norm': 23.9997615814209, 'learning_rate': 3.3655634064708072e-06, 'epoch': 2.8}
+{'loss': 0.5127, 'grad_norm': 12.672396659851074, 'learning_rate': 1.6792952770546672e-06, 'epoch': 2.9}
+  0%|                                                                                                                                                                                     | 0/1 [3:25:26<?, ?it/s/home/julia/miniconda3/envs/envi/lib/python3.11/site-packages/geneformer/collator_for_classification.py:658: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  batch = {k: torch.tensor(v, dtype=torch.int64) for k, v in batch.items()}
+{'eval_loss': 0.5294649600982666, 'eval_accuracy': 0.8049352081610146, 'eval_macro_f1': 0.6729270469866837, 'eval_runtime': 193.8052, 'eval_samples_per_second': 74.859, 'eval_steps_per_second': 6.238, 'epoch': 3.0}
+{'train_runtime': 12930.1574, 'train_samples_per_second': 26.927, 'train_steps_per_second': 3.366, 'train_loss': 0.6413907286941364, 'epoch': 3.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 43524/43524 [3:35:30<00:00,  3.37it/s]
