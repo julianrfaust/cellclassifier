@@ -44,7 +44,7 @@ This script produces `combined_results.csv`, `gbdt_results.csv`, `random_forest_
 ```bash
 python finetune_geneformer.py
 ```
-The output from this script is recorded in `fine_tuning/` in `model_output/results`, intermediate outputs and the finetuned model to `fine_tuning_outputs` (available at the drive link).
+The print output from this script is recorded in `model_output/results`, intermediate outputs and the finetuned model to `fine_tuning_outputs` (available at the Drive link). 
 
 ```bash
 python binary_rf.py
