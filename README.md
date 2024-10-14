@@ -71,7 +71,7 @@ Description: Binary classification to examine the influence of specific genes in
 ## 6. Results
 Results in `csv/txt` form can be found in `model_output/results`, while plots can be found in `model_output/plots`. The comparison of RF/GBDT multiclass is in `combined_results.csv`, the log of fine tuning `geneformer-6L` for 3 epochs in `fine_tuning_log.txt`, and the binary classification results for each cell type can be found in the file `binary_classification_rf_results.csv`. Despite only finetuning for 3 epochs with the smallest Geneformer model (6L, 30M), the transfer learning approach substantially outperformed the simple RF/GBDT classifiers. While certain forms of preprocessing such as taking highly variable genes and PCA were able to boost performance of the RF/GBDT slightly (results not shown here), I was not able to match the 80% accuracy/0.67 macro-F1 achieved by transfer learning.
 
-![baselines_geneformer_compare](https://github.com/user-attachments/assets/fd31f526-be00-41b6-9c30-e324415d6634)
+![baselines_geneformer_compare](https://github.com/user-attachments/assets/70dd6031-f534-4904-87e3-b84eb2f922a5)
 
 An example of the random forest MDI feature importance for CD19+ B cell type as positive and a balanced negative background distribution from the other 10 cell types:
 ![feature_importance_CD19+ B_even](https://github.com/user-attachments/assets/8b0ab0d0-ef74-455e-b992-9fa0250dae10)
