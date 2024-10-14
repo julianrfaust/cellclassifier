@@ -1,7 +1,7 @@
 # CellClassifier
 
 ## 1. Overview
-This project explores machine learning techniques for classifying cell types based on gene expression data. It encompasses baseline multiclass models, transfer learning, and binary classification approaches to provide a comprehensive understanding of cellular identities.
+This project explores machine learning techniques for classifying cell types based on gene expression data. It encompasses baseline multiclass models, transfer learning, and binary classification approaches.
 
 ## 2. Table of Contents
 1. [Overview](#1-overview)
