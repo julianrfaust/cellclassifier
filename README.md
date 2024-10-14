@@ -69,12 +69,14 @@ Description: Utilizes transfer learning by finetuning Geneformer, a context-awar
 Description: Binary classification to examine the influence of specific genes in determining cell types through feature importance of Random Forest model. Breakdown of results by cell type, with different negative schemes is implemented.
 
 ## 6. Results
-Results in `csv/txt` form can be found in `model_output/results`, while plots can be found in `model_output/plots`. The comparison of RF/GBDT multiclass is in `combined_results.csv`, the log of fine tuning `geneformer-6L` for 3 epochs in `fine_tuning_log.txt`, and the binary classification results for each cell type can be found in the file `binary_classification_rf_results.csv`. Despite only finetuning for 3 epochs with the smallest Geneformer model (6L, 30M), the transfer learning approach substantially outperformed the simple RF/GBDT classifiers. While certain forms of preprocessing such as taking highly variable genes and PCA were able to boost performance of the RF/GBDT slightly (results not shown here), I was not able to match the 80% accuracy/0.67 macro-F1 achieved by transfer learning.
+Results in `csv/txt` form can be found in `model_output/results`, while plots can be found in `model_output/plots`. The comparison of RF/GBDT multiclass is in `combined_results.csv`, the log of fine tuning `geneformer-6L` for 3 epochs in `fine_tuning_log.txt`, and the binary classification results for each cell type can be found in the file `binary_classification_rf_results.csv`. Despite only finetuning for 3 epochs with the smallest Geneformer model (6L, 30M), the transfer learning approach substantially outperformed the simple RF/GBDT classifiers. While certain forms of preprocessing such as taking highly variable genes and PCA were able to boost performance of the RF/GBDT slightly (results not shown here), I was not able to scratch the 80% accuracy/0.67 macro-F1 achieved by transfer learning the Geneformer-6L model for 3 epochs. Further epochs of training, hyperparameter tuning, or starting from a larger model (e.g. 12L, 95M) would be a natural choice for optimizing performance.
 
 ![baselines_geneformer_compare](https://github.com/user-attachments/assets/70dd6031-f534-4904-87e3-b84eb2f922a5)
 
 An example of the random forest MDI feature importance for CD19+ B cell type as positive and a balanced negative background distribution from the other 10 cell types:
 ![feature_importance_CD19+ B_even](https://github.com/user-attachments/assets/8b0ab0d0-ef74-455e-b992-9fa0250dae10)
+
+There are many other extensions that would be interesting to carry out on this dataset including more sophisticated forms of data processing and feature selection, hyperparameter optimizations (model size increase to 12L-95M, more epochs, layers frozen, learning rate/scheduler), ensembling, investigating LoRA/DoRA performance, or multitask learning. Further analyses could include confusion matrices to understand model behavior and explicit similarity analyses between cell types.
 
 # Instructions
 # SC-interview - Cell Annotation with Single-Cell RNA-seq
