@@ -55,8 +55,8 @@ def plot_results(eval_acc, eval_macro_f1, rf_acc, gbdt_acc, rf_f1, gbdt_f1):
     acc_errors = [rf_acc_std, gbdt_acc_std] + [0, 0, 0]  # No error bars for Geneformer models
     
     ax[0].bar(models, acc_values, yerr=acc_errors, capsize=5, color=colors)
-    ax[0].set_title('Test Accuracy vs Eval Accuracy', fontsize=14)
-    ax[0].set_ylabel('Accuracy', fontsize=12)
+    ax[0].set_title('Model Comparison Test Accuracy', fontsize=14)
+    ax[0].set_ylabel('Test Accuracy', fontsize=12)
     ax[0].set_ylim([0.5, 1.0])
     ax[0].tick_params(axis='x', labelsize=6)
     ax[0].tick_params(axis='y', labelsize=6)
@@ -66,8 +66,8 @@ def plot_results(eval_acc, eval_macro_f1, rf_acc, gbdt_acc, rf_f1, gbdt_f1):
     f1_errors = [rf_f1_std, gbdt_f1_std] + [0, 0, 0]  # No error bars for Geneformer models
     
     ax[1].bar(models, f1_values, yerr=f1_errors, capsize=5, color=colors)
-    ax[1].set_title('Test Macro F1 vs Eval Macro F1', fontsize=14)
-    ax[1].set_ylabel('Macro F1', fontsize=12)
+    ax[1].set_title('Model Comparison Test Macro F1', fontsize=14)
+    ax[1].set_ylabel('Test Macro F1', fontsize=12)
     ax[1].set_ylim([0.0, 1.0])
     ax[1].tick_params(axis='x', labelsize=6)
     ax[1].tick_params(axis='y', labelsize=6)
