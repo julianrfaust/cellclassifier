@@ -31,7 +31,7 @@ cd Geneformer
 pip install .
 ```
 
-Relevant `.pkl` files (ensembl_mapping_dict.pkl, gene_median_dictionary.pkl, gene_name_id_dict.pkl, token_dictionary.pkl) were downloaded from https://huggingface.co/ctheodoris/Geneformer/tree/main and moved into the relevant subdirectories. Minimal changes were made within `classifier.py`, `collator_for_classification.py`, `evaluation_utils.py` to reference these files. Alternatively, a `.zip` of the entire working folder (1.3GB) from which all scripts were run, with these minimal changes, can be accessed at the following Drive link:
+Relevant `.pkl` files (ensembl_mapping_dict.pkl, gene_median_dictionary.pkl, gene_name_id_dict.pkl, token_dictionary.pkl) were downloaded from https://huggingface.co/ctheodoris/Geneformer/tree/main and moved into the relevant subdirectories. Minimal changes were made within `classifier.py`, `collator_for_classification.py`, `evaluation_utils.py` to reference these files. Alternatively, a `.zip` of the entire working folder with all the models (12GB) from which all scripts were run, with all these minimal changes, can be accessed at the following Drive link: https://drive.google.com/file/d/13fd1bRUR8ORYXrkgyE6r8ZXL5l1UCbgy/view?usp=sharing
 
 ## 4. Usage
 To run the classification models, execute:
